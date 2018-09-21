@@ -1,6 +1,7 @@
 const noteTitle = document.querySelector("#note-title")
 const noteBody = document.querySelector("#note-body")
 const removeBtn = document.querySelector("#remove-note")
+const dateElement = document.querySelector("#note-date")
 
 const noteID = location.hash.substring(1)
 let notes = getNotes()
@@ -14,14 +15,19 @@ if(note === undefined){
 
 noteTitle.value = note.title
 noteBody.value = note.body
+dateElement.textContent = generateLastEdit(note.updatedAt)
 
 noteTitle.addEventListener("input", function(e){
     note.title = e.target.value
+    note.updatedAt = moment().valueOf()
+    dateElement.textContent = generateLastEdit(note.updatedAt)
     saveNotes(notes)
 })
 
 noteBody.addEventListener("input", function(e){
     note.body = e.target.value
+    note.updatedAt = moment().valueOf()
+    dateElement.textContent = generateLastEdit(note.updatedAt)
     saveNotes(notes)
 })
 
@@ -44,5 +50,7 @@ window.addEventListener("storage", function(e){
         
         noteTitle.value = note.title
         noteBody.value = note.body
+        dateElement.textContent = generateLastEdit(note.updatedAt)
     }
 })
+
