@@ -8,18 +8,36 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 </head>
 <body>
-    <h1>Notify</h1>
-    <h2>Take notes and never forget them</h2>
-    <input id="search-text" type="text" placeholder="Filter notes">
-    <select id="filter-by">
-        <option value="byEdited">Sort by last edited</option>
-        <option value="byCreated">Sort by recently created</option>
-        <option value="alphabetical">Sort alphabetically</option>
-    </select>
-    <div id="notes"></div>
-    <button id="create-note">Create Note</button>
+    <!-- HEADER START -->
+    <header class="header"> 
+        <div class="container">
+            <h1 class="header__title">Notify</h1>
+            <h2 class="header__subtitle">Take notes and never forget</h2>
+        </div>
+    </header>
+    <!-- HEADER END -->
+    <!-- ACTION START -->
+    <div class="actions">
+        <div class="actions__container">
+            <div class="actions__container--spaced">
+                <button class="button"id="create-note">Create Note</button>
+                <input class="input" id="search-text" type="text" placeholder="Filter notes">
+                <select class="dropdown" id="filter-by">
+                    <option value="byEdited">Sort by last edited</option>
+                    <option value="byCreated">Sort by recently created</option>
+                    <option value="alphabetical">Sort alphabetically</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- ACTION END -->
+    <!-- NOTE ITEMS START -->
+    <div class="container">
+        <div id="notes"></div>
+    </div>
+    <!-- NOTE ITEMS END -->
 
-    <script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script>
+    <script src="scripts/uuidv4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
     <script src="scripts/notes-function.js"></script>
     <script src="scripts/notes-app.js"></script>
