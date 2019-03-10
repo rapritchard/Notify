@@ -1,5 +1,5 @@
 import { renderNotes } from './views';
-import { createNote } from './notes';
+import { createNote, loadNotes } from './notes';
 import { setFilters } from './filters';
 
 
@@ -27,6 +27,7 @@ document.querySelector('#filter-by').addEventListener('change', (e) => {
 
 window.addEventListener('storage', (e) => {
   if (e.key === 'notes') {
+    loadNotes();
     renderNotes();
   }
 });

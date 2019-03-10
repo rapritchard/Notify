@@ -103,5 +103,5 @@ const updateNote = (id, updates) => {
 notes = loadNotes();
 
 export {
-  getNotes, createNote, removeNote, sortNotes, updateNote,
+  getNotes, createNote, removeNote, sortNotes, updateNote, loadNotes,
 };
